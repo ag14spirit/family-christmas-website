@@ -176,6 +176,7 @@ textarea {
   body {
     min-width: 320px;
   }
+
 }
 
 html {
@@ -212,21 +213,27 @@ html {
 }
 
 @media screen and (max-width: 1680px) {
+
   html {
     font-size: 12pt;
   }
+
 }
 
 @media screen and (max-width: 736px) {
+
   html {
     font-size: 11pt;
   }
+
 }
 
 @media screen and (max-width: 360px) {
+
   html {
     font-size: 10pt;
   }
+
 }
 
 body,
@@ -341,6 +348,7 @@ h6 {
 }
 
 @media screen and (max-width: 736px) {
+
   h1 {
     font-size: 1.75rem;
     line-height: 1.4;
@@ -350,6 +358,7 @@ h6 {
     font-size: 1.25em;
     line-height: 1.5;
   }
+
 }
 
 sub {
@@ -461,6 +470,7 @@ form>.fields>.field.quarter {
 }
 
 @media screen and (max-width: 480px) {
+
   form>.fields {
     width: calc(100% + 3rem);
     margin: -1.5rem 0 2rem -1.5rem;
@@ -482,6 +492,7 @@ form>.fields>.field.quarter {
   form>.fields>.field.quarter {
     width: calc(100% - 1.5rem);
   }
+
 }
 
 label {
@@ -825,15 +836,19 @@ input[type="radio"]+label:before {
 }
 
 @media screen and (max-width: 736px) {
+
   .image.main {
     margin: 2rem 0;
   }
+
 }
 
 @media screen and (max-width: 480px) {
+
   .image.main {
     margin: 1.5rem 0;
   }
+
 }
 
 /* List */
@@ -959,6 +974,7 @@ ul.actions.fit.stacked {
 }
 
 @media screen and (max-width: 480px) {
+
   ul.actions:not(.fixed) {
     -moz-flex-direction: column;
     -webkit-flex-direction: column;
@@ -1005,6 +1021,7 @@ ul.actions.fit.stacked {
   ul.actions:not(.fixed) li .button.icon:before {
     margin-left: -0.5em;
   }
+
 }
 
 /* Icons */
@@ -1332,21 +1349,27 @@ body.is-preload #bg:before {
 }
 
 @media screen and (max-width: 1680px) {
+
   #wrapper {
     padding: 3rem 2rem;
   }
+
 }
 
 @media screen and (max-width: 736px) {
+
   #wrapper {
     padding: 2rem 1rem;
   }
+
 }
 
 @media screen and (max-width: 480px) {
+
   #wrapper {
     padding: 1rem;
   }
+
 }
 
 /* Header */
@@ -1548,12 +1571,15 @@ body.is-preload #header .content .inner {
 }
 
 @media screen and (max-width: 980px) {
+
   #header .content p br {
     display: none;
   }
+
 }
 
 @media screen and (max-width: 736px) {
+
   #header>* {
     margin-top: 2rem;
   }
@@ -1580,9 +1606,11 @@ body.is-preload #header .content .inner {
   #header .content p {
     line-height: 1.875;
   }
+
 }
 
 @media screen and (max-width: 480px) {
+
   #header {
     padding: 1.5rem 0;
   }
@@ -1619,6 +1647,7 @@ body.is-preload #header .content .inner {
   #header nav.use-middle:after {
     display: none;
   }
+
 }
 
 /* Main */
@@ -1721,6 +1750,7 @@ body.is-preload #header .content .inner {
 }
 
 @media screen and (max-width: 736px) {
+
   #main article {
     padding: 3.5rem 2rem 0.5rem 2rem;
   }
@@ -1732,12 +1762,15 @@ body.is-preload #header .content .inner {
     height: 2.25rem;
     background-size: 14px 14px;
   }
+
 }
 
 @media screen and (max-width: 480px) {
+
   #main article {
     padding: 3rem 1.5rem 0.5rem 1.5rem;
   }
+
 }
 
 /* Footer */
