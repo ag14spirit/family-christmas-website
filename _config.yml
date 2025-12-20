@@ -1,0 +1,20 @@
+# Jekyll configuration for GitHub Pages
+name: McKenna Family Christmas
+description: Annual Christmas card from the McKenna family
+
+# GitHub Pages uses Jekyll 3.9+ with safe mode
+# This config ensures compatibility
+plugins:
+  - jekyll-relative-links
+
+# Markdown processor
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - LICENSE
+  - .gitignore
