@@ -63,72 +63,12 @@
         {{ content }}
       </article>
 
+      {% if page.menu_file %}
       <article id="menu">
-        <h2 class="major">Holiday Menu</h2>
-        <p>We're celebrating with family over these delightful meals:</p>
-
-        <section class="menu-day">
-          <h3 class="major">Sunday, Dec 22</h3>
-          <h4>Breakfast:</h4>
-          <p><strong>Yogurt</strong> served with granola and fresh fruit.</p>
-          <span class="image right"><img src="/images/faimes/pork.jpg" alt="Pork chops with apples" /></span>
-          <h4>Dinner:</h4>
-          <p><strong><a href="https://recipes.mckennafam.com/view/recipe/32">Pork chops</a></strong> with crispy sage pan sauce, apples, and creamy mashed sweet potatoes.</p>
-          <h4>Dessert:</h4>
-          <p><strong>Baked apples</strong> with butter and cinnamon sugar.</p>
-        </section>
-
-        <section class="menu-day">
-          <h3 class="major">Monday, Dec 23</h3>
-          <h4>Breakfast:</h4>
-          <p><strong>Bacon and eggs</strong> served with hash browns and sautéed spinach.</p>
-          <span class="image right"><img src="/images/faimes/charcuterie.jpg" alt="Shepherd's grazing spread" /></span>
-          <h4>Dinner:</h4>
-          <p><strong><a href="https://recipes.mckennafam.com/view/recipe/270">Shepherd's spread</a></strong> charcuterie with mulled cider, served with a crusty baguette and a simple side salad.</p>
-          <h4>Dessert:</h4>
-          <p><strong>Hot chocolate</strong> with whiskey whipped cream.</p>
-        </section>
-
-        <section class="menu-day">
-          <h3 class="major">Tuesday, Dec 24</h3>
-          <h4>Breakfast:</h4>
-          <p><strong>Cream of wheat</strong> topped with fresh fruit, toasted nuts, and honey.</p>
-          <h4>Dinner:</h4>
-          <p><strong>Tamales y chile</strong> servidos con guacamole fresco, cebolla, queso y crema agria. <br />
-            <i class="translation">Tamales and chili served with fresh guacamole, onion, cheese, and sour cream.</i>
-          </p>
-          <h4>Dessert:</h4>
-          <p>Christmas <strong>sugar cookies</strong> to decorate.</p>
-        </section>
-
-        <section class="menu-day">
-          <h3 class="major">Wednesday, Dec 25</h3>
-          <h4>Breakfast:</h4>
-          <p><strong><a href="https://recipes.mckennafam.com/view/recipe/53">Breakfast casserole</a></strong> with sausage and cheese, paired with fresh fruit.</p>
-          <span class="image right"><img src="/images/faimes/prime-rib.jpg" alt="Sliced prime rib" /></span>
-          <h4>Dinner:</h4>
-          <p><strong><a href="https://recipes.mckennafam.com/view/recipe/267">Prime rib</a></strong> with roasted root vegetables and horseradish cream.</p>
-          <h4>Dessert:</h4>
-          <p>Baltimore <strong>eggnog</strong>.</p>
-        </section>
-
-        <section class="menu-day">
-          <h3 class="major">Thursday, Dec 26</h3>
-          <h4>Breakfast:</h4>
-          <p><strong>Kanelbullar</strong> och kaffe med yoghurt och granola. <br />
-            <i class="translation">Swedish cinnamon buns and coffee with yogurt and granola.</i>
-          </p>
-          <span class="image right"><img src="/images/faimes/meatballs.jpg" alt="Swedish meatballs" /></span>
-          <h4>Dinner:</h4>
-          <p><strong><a href="https://recipes.mckennafam.com/view/recipe/266">Svenska köttbullar</a></strong> med sås och glögg, serverade med potatismos, lingon och snabbpicklad gurka. <br />
-            <i class="translation">Swedish meatballs with sauce and mulled wine, served with mashed potatoes, lingonberry, and quick pickled cucumber.</i>
-          </p>
-          <h4>Dessert:</h4>
-          <p><strong>Pepperkakor</strong>. <br />
-            <i class="translation">Gingersnaps.</i>
-          </p>
-        </section>
+        {% capture menu_markdown %}{% include_relative {{ page.menu_file }} %}{% endcapture %}
+        {{ menu_markdown | markdownify }}
       </article>
+      {% endif %}
 
       <!-- Contact -->
       <article id="contact">
