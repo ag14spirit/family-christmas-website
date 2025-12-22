@@ -15,8 +15,8 @@
   <meta property="og:description" content="Wishing you all a wonderful Christmas and an exciting new year!" />
   <meta property="og:url" content="https://mckennafam.com" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:image" content="https://mckennafam.com/images/faimes/{{ page.year | default: '2024' }}%20preview.jpg" />
-  <meta property="og:image:secure_url" content="https://mckennafam.com/images/faimes/{{ page.year | default: '2024' }}%20preview.jpg" />
+  <meta property="og:image" content="https://mckennafam.com/images/{{ page.year | default: '2024' }}%20preview.jpg" />
+  <meta property="og:image:secure_url" content="https://mckennafam.com/images/{{ page.year | default: '2024' }}%20preview.jpg" />
   <meta property="og:image:width" content="1240" />
   <meta property="og:image:height" content="620" />
   <meta property="og:image:alt" content="McKenna family Christmas card preview" />
@@ -53,7 +53,7 @@
           <li><a href="#menu" class="icon solid fa-utensils"> Eat</a></li>
           {% endif %}
           {% if page.pdf_file %}
-          <li><a href="/images/faimes/{{ page.year | default: '2024' }}.pdf" class="icon solid fa-download"> Print</a></li>
+          <li><a href="/content/{{ page.year | default: '2024' }}.pdf" class="icon solid fa-download"> Print</a></li>
           {% endif %}
           <!-- <li><a href="#2024" class=""> 2024</a></li> -->
           <!-- <li><a href="#contact" class="icon solid fa-hands">Pray</a></li> -->
