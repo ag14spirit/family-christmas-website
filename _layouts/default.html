@@ -52,7 +52,9 @@
           {% if page.menu_file %}
           <li><a href="#menu" class="icon solid fa-utensils"> Eat</a></li>
           {% endif %}
+          {% if page.pdf_file %}
           <li><a href="/images/faimes/{{ page.year | default: '2024' }}.pdf" class="icon solid fa-download"> Print</a></li>
+          {% endif %}
           <!-- <li><a href="#2024" class=""> 2024</a></li> -->
           <!-- <li><a href="#contact" class="icon solid fa-hands">Pray</a></li> -->
         </ul>
