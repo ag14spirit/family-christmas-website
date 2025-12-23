@@ -1875,6 +1875,11 @@ body.is-preload #footer {
   grid-template-columns: repeat(3, 1fr);
 }
 
+/* Center incomplete row for 5-item grid (last 2 items) */
+.image.grid.five > span:nth-child(4) {
+  grid-column: 2 / 3;
+}
+
 .image.grid.six {
   grid-template-columns: repeat(3, 1fr);
 }
@@ -1887,6 +1892,25 @@ body.is-preload #footer {
   .image.grid.six {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  /* Reset desktop 5-grid centering */
+  .image.grid.five > span:nth-child(4) {
+    grid-column: auto;
+  }
+
+  /* Center incomplete row for 3-item grid in 2 columns (last item) */
+  .image.grid.three > span:nth-child(3) {
+    grid-column: 1 / 2;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+
+  /* Center incomplete row for 5-item grid in 2 columns (last item) */
+  .image.grid.five > span:nth-child(5) {
+    grid-column: 1 / 2;
+    margin-left: 25%;
+    margin-right: 25%;
+  }
 }
 
 /* Mobile responsive */
@@ -1898,11 +1922,17 @@ body.is-preload #footer {
   .image.grid img {
     max-height: 35vh;
   }
+
+  /* Reset tablet centering adjustments for single column */
+  .image.grid.three > span:nth-child(3),
+  .image.grid.five > span:nth-child(5) {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 /* Lightbox for expanded image view */
 .lightbox {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -1910,15 +1940,17 @@ body.is-preload #footer {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.9);
   z-index: 9999;
+  display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
 }
 
 .lightbox.active {
-  display: flex;
   opacity: 1;
+  visibility: visible;
 }
 
 .lightbox img {
@@ -1927,12 +1959,7 @@ body.is-preload #footer {
   object-fit: contain;
   border: 4px solid #fff;
   border-radius: 4px;
-  -webkit-filter: none;
   filter: none;
-}
-
-.lightbox:before {
-  display: none;
 }
 
 .lightbox-close {
@@ -1953,10 +1980,10 @@ body.is-preload #footer {
   border-radius: 100%;
   background-color: rgba(255, 255, 255, 0.1);
   background-position: center;
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='20px' height='20px' viewBox='0 0 20 20' zoomAndPan='disable'%3E%3Cstyle%3Eline %7B stroke: %23ffffff%3B stroke-width: 1.5%3B %7D%3C/style%3E%3Cline x1='2' y1='2' x2='18' y2='18' /%3E%3Cline x1='18' y1='2' x2='2' y2='18' /%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cline x1='2' y1='2' x2='18' y2='18' stroke='%23fff' stroke-width='1.5'/%3E%3Cline x1='18' y1='2' x2='2' y2='18' stroke='%23fff' stroke-width='1.5'/%3E%3C/svg%3E");
   background-size: 20px 20px;
   background-repeat: no-repeat;
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease;
 }
 
 .lightbox-close:hover:before {
