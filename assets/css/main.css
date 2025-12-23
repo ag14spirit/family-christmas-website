@@ -1841,99 +1841,50 @@ body.is-preload #footer {
   background-clip: text;
 }
 
-/* Image Grid - for displaying 2-6 images inline */
+/* Image Grid - justified gallery layout */
 .image.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   margin: 0 0 2rem 0;
   width: 100%;
-  align-items: end;
 }
 
 .image.grid span.image {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  flex-grow: 1;
+  height: 250px;
+  position: relative;
 }
 
 .image.grid img {
+  height: 100%;
   width: 100%;
-  height: auto;
-  object-fit: contain;
+  object-fit: cover;
   cursor: pointer;
+  display: block;
 }
 
-/* Adjust grid for different image counts */
-.image.grid.two {
-  grid-template-columns: repeat(2, 1fr);
+/* Calculate flex-grow based on aspect ratio to maintain proportions */
+.image.grid span.image {
+  flex-basis: auto;
 }
 
-.image.grid.three {
-  grid-template-columns: repeat(3, 1fr);
+/* Ensure last row items expand to fill */
+.image.grid::after {
+  content: "";
+  flex-grow: 999;
 }
 
-.image.grid.four {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.image.grid.five {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-/* Center incomplete row for 5-item grid (last 2 items) */
-.image.grid.five > span:nth-child(4) {
-  grid-column: 2 / 3;
-}
-
-.image.grid.six {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-/* Tablet responsive */
+/* Responsive adjustments */
 @media screen and (max-width: 980px) {
-  .image.grid.three,
-  .image.grid.four,
-  .image.grid.five,
-  .image.grid.six {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* Reset desktop 5-grid centering */
-  .image.grid.five > span:nth-child(4) {
-    grid-column: auto;
-  }
-
-  /* Center incomplete row for 3-item grid in 2 columns (last item) */
-  .image.grid.three > span:nth-child(3) {
-    grid-column: 1 / 2;
-    margin-left: 25%;
-    margin-right: 25%;
-  }
-
-  /* Center incomplete row for 5-item grid in 2 columns (last item) */
-  .image.grid.five > span:nth-child(5) {
-    grid-column: 1 / 2;
-    margin-left: 25%;
-    margin-right: 25%;
+  .image.grid span.image {
+    height: 200px;
   }
 }
 
-/* Mobile responsive */
 @media screen and (max-width: 736px) {
-  .image.grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  .image.grid img {
-    max-height: 35vh;
-  }
-
-  /* Reset tablet centering adjustments for single column */
-  .image.grid.three > span:nth-child(3),
-  .image.grid.five > span:nth-child(5) {
-    margin-left: 0;
-    margin-right: 0;
+  .image.grid span.image {
+    height: 150px;
   }
 }
 
