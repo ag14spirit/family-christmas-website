@@ -1858,7 +1858,7 @@ body.is-preload #footer {
 
 .image.grid img {
   height: 100%;
-  max-width: 100%;
+  width: 100%;
   object-fit: contain;
   cursor: pointer;
   display: block;
@@ -1867,11 +1867,14 @@ body.is-preload #footer {
 /* Calculate flex-grow based on aspect ratio to maintain proportions */
 .image.grid span.image {
   flex-basis: auto;
+  float: left;
 }
 
 /* Ensure last row items expand to fill */
 .image.grid::after {
   content: "";
+  display: block;
+  clear: both;
   flex-grow: 999;
 }
 
