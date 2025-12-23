@@ -1846,7 +1846,7 @@ body.is-preload #footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
-  margin: 0 0 2rem 0;
+  margin: 0 0 0 0;
   width: 100%;
 }
 
