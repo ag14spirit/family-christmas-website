@@ -30,23 +30,6 @@
     }, 100);
   });
 
-  // Fix: Flexbox min-height bug on IE.
-  if (browser.name == "ie") {
-    var flexboxFixTimeoutId;
-
-    $window
-      .on("resize.flexbox-fix", function () {
-        clearTimeout(flexboxFixTimeoutId);
-
-        flexboxFixTimeoutId = setTimeout(function () {
-          if ($wrapper.prop("scrollHeight") > $window.height())
-            $wrapper.css("height", "auto");
-          else $wrapper.css("height", "100vh");
-        }, 250);
-      })
-      .triggerHandler("resize.flexbox-fix");
-  }
-
   // Nav.
   var $nav = $header.children("nav"),
     $nav_li = $nav.find("li");
