@@ -1845,7 +1845,7 @@ body.is-preload #footer {
 .image.grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 1rem;
   margin: 0 0 2rem 0;
   width: 100%;
 }
@@ -1858,8 +1858,8 @@ body.is-preload #footer {
 
 .image.grid img {
   height: 100%;
-  width: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  object-fit: contain;
   cursor: pointer;
   display: block;
 }
