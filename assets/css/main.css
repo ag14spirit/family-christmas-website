@@ -1840,3 +1840,129 @@ body.is-preload #footer {
   -webkit-background-clip: text;
   background-clip: text;
 }
+
+/* Image Grid - for displaying 2-6 images inline */
+.image.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  max-height: 40vh;
+  margin: 0 0 2rem 0;
+  width: 100%;
+}
+
+.image.grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-height: 35vh;
+  cursor: pointer;
+}
+
+/* Adjust grid for different image counts */
+.image.grid.two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.image.grid.three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.image.grid.four {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.image.grid.five {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.image.grid.six {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 736px) {
+  .image.grid {
+    grid-template-columns: 1fr;
+    max-height: none;
+  }
+
+  .image.grid img {
+    max-height: 30vh;
+  }
+}
+
+/* Lightbox for expanded image view */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.lightbox.active {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90vh;
+  object-fit: contain;
+  border: 4px solid #fff;
+  border-radius: 4px;
+  -webkit-filter: none;
+  filter: none;
+}
+
+.lightbox:before {
+  display: none;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.lightbox-close:before {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  background-position: center;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='20px' height='20px' viewBox='0 0 20 20' zoomAndPan='disable'%3E%3Cstyle%3Eline %7B stroke: %23ffffff%3B stroke-width: 1.5%3B %7D%3C/style%3E%3Cline x1='2' y1='2' x2='18' y2='18' /%3E%3Cline x1='18' y1='2' x2='2' y2='18' /%3E%3C/svg%3E");
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.lightbox-close:hover:before {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+@media screen and (max-width: 736px) {
+  .lightbox img {
+    max-width: 95%;
+    max-height: 85vh;
+  }
+
+  .lightbox-close {
+    top: 1rem;
+    right: 1rem;
+  }
+}
