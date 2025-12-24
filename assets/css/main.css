@@ -805,7 +805,7 @@ input[type="radio"]+label:before {
 }
 
 .image img:active {
-  transform: scale(1.1);
+  transform: scale(1.1) !important;
 }
 
 .image.left,
