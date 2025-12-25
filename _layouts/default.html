@@ -55,7 +55,6 @@
           {% if page.pdf_file %}
           <li><a href="/content/{{ page.year | default: '2024' }}.pdf" class="icon solid fa-download"> Print</a></li>
           {% endif %}
-          <!-- <li><a href="#2024" class=""> 2024</a></li> -->
           <!-- <li><a href="#contact" class="icon solid fa-hands">Pray</a></li> -->
         </ul>
       </nav>
@@ -75,36 +74,37 @@
       {% endif %}
 
       <!-- Contact -->
-      <article id="contact">
-        <h2 class="major">How can we pray for you?</h2>
-        <form method="post" action="#">
-          <div class="fields">
-            <div class="field">
-              <label for="name">Name</label>
-              <input type="text" name="name" id="name" placeholder="John Smith" required>
+        <article id="contact">
+          <h2 class="major">How can we pray for you?</h2>
+          <form id="contactForm">
+            <div class="fields">
+              <div class="field">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="John Smith" required>
+              </div>
+              <div class="field half">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="user@domain.com" required>
+              </div>
+              <div class="field half">
+                <label for="phone">Phone</label>
+                <input type="tel" name="phone" id="phone" placeholder="+1 979 353 2570" required>
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" placeholder="Type your prayer request here..."
+                  required> </textarea>
+              </div>
             </div>
-            <div class="field half">
-              <label for="phone">Phone</label>
-              <input type="tel" name="phone" id="phone" placeholder="+1 979 353 2570" required>
-            </div>
-            <div class="field half">
-              <label for="email">Email</label>
-              <input type="email" name="email" id="email" placeholder="user@domain.com" required>
-            </div>
-            <div class="field">
-              <label for="message">Message</label>
-              <textarea name="message" id="message" placeholder="Type your prayer request here..." required> </textarea>
-            </div>
-          </div>
-          <ul class="actions">
-            <li>
-              <button type="submit" value="Send Message" class="primary"> </button>
-              <div id="responseMessage" class="message"></div>
-            </li>
-            <li><input type="reset" value="Reset" /></li>
-          </ul>
-        </form>
-      </article>
+            <ul class="actions">
+              <li>
+                <button type="submit" value="Send Message" class="primary">Send Message</button>
+              </li>
+              <li><input type="reset" value="Reset" /></li>
+            </ul>
+            <div id="responseMessage" class="message"></div>
+          </form>
+        </article>
     </div>
 
     <footer id="footer">
@@ -291,7 +291,7 @@
   <script src="assets/js/util.js" defer></script>
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/lightbox.js" defer></script>
-  <!-- <script>
+  <script>
     document.getElementById("contactForm").addEventListener("submit", function(e) {
       e.preventDefault();
       const form = e.target;
@@ -317,10 +317,10 @@
         }
       })
       .catch(error => {
-        document.getElementById("responseMessage").textContent = "Error: Your message could not be sent.";
+        document.getElementById("responseMessage").textContent = "ERROR: Your message could not be sent.";
       });
     });
-  </script> -->
+  </script>
 </body>
 
 </html>
