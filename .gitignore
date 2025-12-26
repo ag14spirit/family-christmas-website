@@ -438,3 +438,4 @@ Thumbs.db
 # Large design raw #
 ######################
 *.psd
+.COMMIT_MESSAGE.md
