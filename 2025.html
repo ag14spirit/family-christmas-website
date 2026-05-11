@@ -1,0 +1,9 @@
+---
+layout: default
+year: 2025
+content_file: content/2025.md
+menu_file: content/menu-2025.md
+pdf_file: content/2025.pdf
+---
+{% capture content_markdown %}{% include_relative {{ page.content_file }} %}{% endcapture %}
+{{ content_markdown | markdownify }}
