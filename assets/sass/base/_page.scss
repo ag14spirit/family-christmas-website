@@ -6,6 +6,23 @@
 
 /* Basic */
 
+// Theme CSS custom properties
+:root {
+  --color-bg:             #{_palette(bg)};
+  --color-bg-alt:         #{_palette(bg-alt)};
+  --color-bg-overlay:     #{_palette(bg-overlay)};
+  --color-fg:             #{_palette(fg)};
+  --color-fg-light:       #{_palette(fg-light)};
+  --color-accent:         #{_palette(border)};
+  --color-border-bg:      #{_palette(border-bg)};
+  --color-border-bg-alt:  #{_palette(border-bg-alt)};
+  --snowflakes-display:   flex;
+}
+
+body.theme-announcement {
+  --snowflakes-display: none;
+}
+
 // MSIE: Required for IEMobile.
 @-ms-viewport {
   width: device-width;

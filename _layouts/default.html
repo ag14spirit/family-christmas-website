@@ -7,12 +7,12 @@
 <html>
 
 <head>
-  <title>McKenna Family Christmas</title>
+  <title>{{ page.theme_title | default: 'McKenna Family Christmas' }}</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <meta property="og:title" content="McKenna Family Christmas" />
+  <meta property="og:title" content="{{ page.theme_title | default: 'McKenna Family Christmas' }}" />
   <meta property="og:type" content="website" />
-  <meta property="og:description" content="Wishing you all a wonderful Christmas and an exciting new year!" />
+  <meta property="og:description" content="{{ page.theme_description | default: 'Wishing you all a wonderful Christmas and an exciting new year!' }}" />
   <meta property="og:url" content="https://mckennafam.com" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:image" content="https://mckennafam.com/images/{{ page.year | default: '2024' }}%20preview.jpg" />
@@ -28,7 +28,7 @@
   </noscript>
 </head>
 
-<body class="is-preload">
+<body class="is-preload theme-{{ page.theme | default: 'christmas' }}">
   <!-- Wrapper -->
   <div id="wrapper">
     <!-- Header -->
@@ -38,7 +38,7 @@
       </div>
       <div class="content">
         <div class="inner">
-          <h1 class="gold">McKenna Family Christmas</h1>
+          <h1 class="gold">{{ page.theme_title | default: 'McKenna Family Christmas' }}</h1>
           <p>What a year {{ page.year | default: '2024' }} was!</p>
           <p>
             Celebrations, adventures, and everyday moments remind us of <a href="https://www.gospelfluency.com/#about">God's faithfulness in our lives</a>.
@@ -136,6 +136,7 @@
   </div>
   <style>
     .snowflakes {
+      display: var(--snowflakes-display);
       position: fixed;
       top: 0;
       left: 0;
