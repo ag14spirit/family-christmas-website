@@ -10,9 +10,9 @@
   <title>{{ page.theme_title | default: 'McKenna Family Christmas' }}</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <meta property="og:title" content="{{ page.theme_title | default: 'McKenna Family Christmas' }}" />
+  <meta property="og:title" content="{{ page.theme_title | default: 'The McKenna Family' }}" />
   <meta property="og:type" content="website" />
-  <meta property="og:description" content="{{ page.theme_description | default: 'Wishing you all a wonderful Christmas and an exciting new year!' }}" />
+  <meta property="og:description" content="{{ page.theme_greeting | default: 'Wishing you all a wonderful Christmas and an exciting new year!' }}" />
   <meta property="og:url" content="https://mckennafam.com" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:image" content="https://mckennafam.com/images/{{ page.year | default: '2024' }}%20preview.jpg" />
@@ -45,9 +45,9 @@
       <div class="content">
         <div class="inner">
           <h1 class="gold">{{ page.theme_title | default: 'McKenna Family Christmas' }}</h1>
-          <p>What a year {{ page.year | default: '2024' }} was!</p>
+          <p>What a year {{ page.year | default: 'this' }} was!</p>
           <p>
-            Celebrations, adventures, and everyday moments remind us of <a href="https://www.gospelfluency.com/#about">God's faithfulness in our lives</a>.
+            {{ page.theme_description | default: '' }}
             <strong><a href="#faimes">Click below</a></li></strong> for some of our favorite memories from this year:
           </p>
         </div>
@@ -59,7 +59,7 @@
           <li><a href="#menu" class="icon solid fa-utensils"> Eat</a></li>
           {% endif %}
           {% if page.pdf_file %}
-          <li><a href="/content/{{ page.year | default: '2024' }}.pdf" class="icon solid fa-download"> Print</a></li>
+          <li><a href="/content/{{ page.year }}.pdf" class="icon solid fa-download"> Print</a></li>
           {% endif %}
           <li><a href="#contact" class="icon solid fa-hands"> Pray</a></li>
         </ul>
