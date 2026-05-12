@@ -52,7 +52,7 @@ Each year, just:
    content_file: content/2026.md
    menu_file: content/menu-2026.md
    ```
-4. Update the header text in `_layouts/default.html` if you want to change "What a year 2025 was!" to the new year
+4. (Optional) Set `theme`, `theme_title`, `theme_greeting`, and `theme_description` in the front matter to customize the title and color scheme
 5. Commit and push
 
 GitHub Pages rebuilds automatically. Done.
@@ -62,14 +62,35 @@ GitHub Pages rebuilds automatically. Done.
 - Use regular markdown for paragraphs, headings, links, etc.
 - For image positioning, use HTML: `<span class="image right"><img src="..." /></span>`
 - Position options: `image left`, `image right`, `image main` (full width)
+- For photo grids, use: `<div class="image grid three">` with 2–6 `<span class="image">` children inside
 - HTML tags work fine in markdown files
+
+## Theme Customization
+
+Each year's entry point (`index.html` or `YYYY.html`) supports optional front matter to override the site's title, meta description, and color theme:
+
+```yaml
+---
+layout: default
+year: 2026
+content_file: content/2026.md
+theme: christmas           # applies body class "theme-christmas" for CSS targeting
+theme_title: "McKenna Family Christmas"
+theme_greeting: "Wishing you a wonderful Christmas!"
+theme_description: "A short subtitle shown under the title."
+pdf_file: content/2026.pdf  # optional — adds a PDF download button
+---
+```
+
+The `theme` value becomes a CSS body class (`theme-christmas`, `theme-baby-girl`, etc.), letting you override CSS variables in `assets/sass/base/_page.scss` for per-year color palettes without touching the shared layout.
 
 ## Customization
 
 - Edit `_layouts/default.html` to change the overall structure
-- Modify `assets/css/main.css` for styling changes
+- Modify `assets/sass/base/_page.scss` (compiled to `assets/css/main.css`) for styling changes
+- CSS variables in `_page.scss` control colors — add a new `body.theme-*` block to create a custom palette for any year
 - Update meta tags in the layout for SEO/social sharing
-- The snowflakes are CSS-based (at the bottom of `default.html`)
+- The snowflakes are CSS-based (inline in `default.html`)
 
 ## Testing Locally (Optional)
 
