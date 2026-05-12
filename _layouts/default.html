@@ -22,6 +22,12 @@
   <meta property="og:image:alt" content="McKenna family Christmas card preview" />
   <meta property="og:image:type" content="image/jpeg" />
   <link rel="icon" type="image/x-icon" href="/images/tree-icon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="images/bg3.jpg" as="image">
+  <link rel="preload" href="assets/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" />
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript>
     <link rel="stylesheet" href="assets/css/noscript.css" />
@@ -292,6 +298,13 @@
   <script src="assets/js/util.js" defer></script>
   <script src="assets/js/main.js" defer></script>
   <script src="assets/js/lightbox.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('#main article img').forEach(function(img) {
+        img.loading = 'lazy';
+      });
+    });
+  </script>
   <script>
     document.getElementById("contactForm").addEventListener("submit", function(e) {
       e.preventDefault();
