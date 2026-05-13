@@ -87,3 +87,26 @@
     }
   }
 }
+
+/* Image Grid - flex row, fills full width, max 4 per row */
+.image.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+  margin: 0 0 2rem 0;
+
+  > .image {
+    flex: 1 1 0;
+    min-width: calc(25% - 0.75rem);
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 40vh;
+      object-fit: cover;
+      cursor: pointer;
+      display: block;
+    }
+  }
+}
