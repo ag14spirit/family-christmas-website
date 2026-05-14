@@ -1900,8 +1900,8 @@ body.is-preload #footer {
 
 .image.grid > .image img:hover {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto;
   max-width: min(40vw, 700px);
   max-height: 30vh;
   object-fit: initial;
