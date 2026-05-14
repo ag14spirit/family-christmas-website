@@ -1895,13 +1895,9 @@ body.is-preload #footer {
 
 .image.grid > .image img:hover {
   position: absolute;
-  width: auto;
-  height: auto;
-  max-width: min(80vw, 700px);
-  max-height: 75vh;
+  max-width: min(40vw, 700px);
+  max-height: 30vh;
   object-fit: initial;
-  top: 50%;
-  left: 50%;
-  transform: rotate(var(--img-rotate, 0deg)) !important;
+  transform: scale(1.1) rotate(var(--img-rotate, 0deg)) !important;
   box-shadow: 0 10px 50px rgba(0, 0, 0, 0.85);
 }
