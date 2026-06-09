@@ -6,80 +6,84 @@
 -->
 <html>
 
-<head>
-  <title>{{ page.theme_title | default: 'McKenna Family Christmas' }}</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <meta property="og:title" content="{{ page.theme_title | default: 'The McKenna Family' }}" />
-  <meta property="og:type" content="website" />
-  <meta property="og:description" content="{{ page.theme_greeting | default: 'Wishing you all a wonderful Christmas and an exciting new year!' }}" />
-  <meta property="og:url" content="https://mckennafam.com" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:image" content="{{ page.og_preview | default: 'https://mckennafam.com/images/2024%20preview.jpg' }}" />
-  <meta property="og:image:secure_url" content="{{ page.og_preview | default: 'https://mckennafam.com/images/2024%20preview.jpg' }}" />
-  <meta property="og:image:width" content="1240" />
-  <meta property="og:image:height" content="620" />
-  <meta property="og:image:alt" content="McKenna Family greeting card" />
-  <meta property="og:image:type" content="image/jpeg" />
-  <link rel="icon" type="image/x-icon" href="/images/tree-icon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="images/bg3.jpg" as="image">
-  <link rel="preload" href="assets/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" />
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <noscript>
-    <link rel="stylesheet" href="assets/css/noscript.css" />
-  </noscript>
-</head>
+  <head>
+    <title>{{ page.theme_title | default: 'McKenna Family Christmas' }}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta property="og:title" content="{{ page.theme_title | default: 'The McKenna Family' }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description"
+      content="{{ page.theme_greeting | default: 'Wishing you all a wonderful Christmas and an exciting new year!' }}" />
+    <meta property="og:url" content="https://mckennafam.com" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image"
+      content="{{ page.og_preview | default: 'https://mckennafam.com/images/2024%20preview.jpg' }}" />
+    <meta property="og:image:secure_url"
+      content="{{ page.og_preview | default: 'https://mckennafam.com/images/2024%20preview.jpg' }}" />
+    <meta property="og:image:width" content="1240" />
+    <meta property="og:image:height" content="620" />
+    <meta property="og:image:alt" content="McKenna Family greeting card" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <link rel="icon" type="image/x-icon" href="/images/tree-icon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="images/bg3.jpg" as="image">
+    <link rel="preload" href="assets/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+      <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+  </head>
 
-<body class="is-preload theme-{{ page.theme | default: 'christmas' }}">
-  <!-- Wrapper -->
-  <div id="wrapper">
-    <!-- Header -->
-    <header id="header">
-      <div class="logo">
-        <img class="icon" src="images/noun-tree-2665898.svg" alt="The McKenna Family Tree" />
-      </div>
-      <div class="content">
-        <div class="inner">
-          <h1 class="gold">{{ page.theme_title | default: 'McKenna Family Christmas' }}</h1>
-          <p>What a year {{ page.year | default: 'this' }} was!</p>
-          <p>
-            {{ page.theme_description | default: '' }}
-            <strong><a href="#faimes">Click below</a></li></strong> for some of our favorite memories from this year:
-          </p>
+  <body class="is-preload theme-{{ page.theme | default: 'christmas' }}">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header">
+        <div class="logo">
+          <img class="icon" src="images/noun-tree-2665898.svg" alt="The McKenna Family Tree" />
         </div>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#faimes" class="icon solid fa-envelope"> Read</a></li>
-          {% if page.menu_file %}
-          <li><a href="#menu" class="icon solid fa-utensils"> Eat</a></li>
-          {% endif %}
-          {% if page.pdf_file %}
-          <li><a href="/content/{{ page.year }}.pdf" class="icon solid fa-download"> Print</a></li>
-          {% endif %}
-          <li><a href="#contact" class="icon solid fa-hands"> Pray</a></li>
-        </ul>
-      </nav>
-    </header>
+        <div class="content">
+          <div class="inner">
+            <h1 class="gold">{{ page.theme_title | default: 'McKenna Family Christmas' }}</h1>
+            <p>What a year {{ page.year | default: 'this' }} has been!</p>
+            <p>
+              {{ page.theme_description | default: '' }}
+              <strong><a href="#faimes">Click below</a></li></strong> for some of our favorite memories from this year:
+            </p>
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#faimes" class="icon solid fa-envelope"> Read</a></li>
+            {% if page.menu_file %}
+            <li><a href="#menu" class="icon solid fa-utensils"> Eat</a></li>
+            {% endif %}
+            {% if page.pdf_file %}
+            <li><a href="/content/{{ page.year }}.pdf" class="icon solid fa-download"> Print</a></li>
+            {% endif %}
+            <li><a href="#contact" class="icon solid fa-hands"> Pray</a></li>
+          </ul>
+        </nav>
+      </header>
 
-    <div id="main">
+      <div id="main">
 
-      <article id="faimes">
-        {{ content }}
-      </article>
+        <article id="faimes">
+          {{ content }}
+        </article>
 
-      {% if page.menu_file %}
-      <article id="menu">
-        {% capture menu_markdown %}{% include_relative {{ page.menu_file }} %}{% endcapture %}
-        {{ menu_markdown | markdownify }}
-      </article>
-      {% endif %}
+        {% if page.menu_file %}
+        <article id="menu">
+          {% capture menu_markdown %}{% include_relative {{ page.menu_file }} %}{% endcapture %}
+          {{ menu_markdown | markdownify }}
+        </article>
+        {% endif %}
 
-      <!-- Contact -->
+        <!-- Contact -->
         <article id="contact">
           <h2 class="major">How can we pray for you?</h2>
           <form id="contactForm">
@@ -111,230 +115,231 @@
             <div id="responseMessage" class="message"></div>
           </form>
         </article>
+      </div>
+
+      <footer id="footer">
+        <p class="copyright">
+          &copy; <a href="https://jmckennaphoto.com">J. McKenna Photography</a>.
+          Design: <a href="https://html5up.net">HTML5 UP</a>. Tree by ka reemov
+          from
+          <a href="https://thenounproject.com/browse/icons/term/tree/" target="_blank" title="Tree Icons">Noun
+            Project</a>
+          (CC BY 3.0)
+        </p>
+      </footer>
     </div>
 
-    <footer id="footer">
-      <p class="copyright">
-        &copy; <a href="https://jmckennaphoto.com">J. McKenna Photography</a>.
-        Design: <a href="https://html5up.net">HTML5 UP</a>. Tree by ka reemov
-        from
-        <a href="https://thenounproject.com/browse/icons/term/tree/" target="_blank" title="Tree Icons">Noun Project</a>
-        (CC BY 3.0)
-      </p>
-    </footer>
-  </div>
+    <!-- BG -->
+    <div id="bg"></div>
 
-  <!-- BG -->
-  <div id="bg"></div>
-
-  <!-- Snowflakes -->
-  <div class="snowflakes" aria-hidden="true">
-    <div class="snowflake">❅</div>
-    <div class="snowflake">❅</div>
-    <div class="snowflake">❆</div>
-    <div class="snowflake">❄</div>
-    <div class="snowflake">❅</div>
-    <div class="snowflake">❆</div>
-    <div class="snowflake">❄</div>
-    <div class="snowflake">❅</div>
-    <div class="snowflake">❆</div>
-    <div class="snowflake">❄</div>
-  </div>
-  <style>
-    .snowflakes {
-      display: var(--snowflakes-display);
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      width: 100vw;
-      z-index: 99999999999;
-      pointer-events: none;
-    }
-
-    .snowflake {
-      color: rgba(255 255 255 0.2);
-      font-size: 14px;
-      font-family: Arial;
-      text-shadow: 0 0 1px #000;
-    }
-
-    @-webkit-keyframes snowflakes-fall {
-      0% {
-        top: -10%;
+    <!-- Snowflakes -->
+    <div class="snowflakes" aria-hidden="true">
+      <div class="snowflake">❅</div>
+      <div class="snowflake">❅</div>
+      <div class="snowflake">❆</div>
+      <div class="snowflake">❄</div>
+      <div class="snowflake">❅</div>
+      <div class="snowflake">❆</div>
+      <div class="snowflake">❄</div>
+      <div class="snowflake">❅</div>
+      <div class="snowflake">❆</div>
+      <div class="snowflake">❄</div>
+    </div>
+    <style>
+      .snowflakes {
+        display: var(--snowflakes-display);
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        z-index: 99999999999;
+        pointer-events: none;
       }
 
-      100% {
-        top: 100%;
-      }
-    }
-
-    @-webkit-keyframes snowflakes-shake {
-      0% {
-        -webkit-transform: translateX(0px);
-        transform: translateX(0px);
+      .snowflake {
+        color: rgba(255 255 255 0.2);
+        font-size: 14px;
+        font-family: Arial;
+        text-shadow: 0 0 1px #000;
       }
 
-      50% {
-        -webkit-transform: translateX(40px);
-        transform: translateX(40px);
-      }
-
-      100% {
-        -webkit-transform: translateX(0px);
-        transform: translateX(0px);
-      }
-    }
-
-    @keyframes snowflakes-fall {
-      0% {
-        top: -10%;
-      }
-
-      100% {
-        top: 100%;
-      }
-    }
-
-    @keyframes snowflakes-shake {
-      0% {
-        transform: translateX(0px);
-      }
-
-      50% {
-        transform: translateX(40px);
-      }
-
-      100% {
-        transform: translateX(0px);
-      }
-    }
-
-    .snowflake {
-      position: fixed;
-      top: -10%;
-      z-index: 9999;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      cursor: default;
-      -webkit-animation-name: snowflakes-fall, snowflakes-shake;
-      -webkit-animation-duration: 10s, 3s;
-      -webkit-animation-timing-function: linear, ease-in-out;
-      -webkit-animation-iteration-count: infinite, infinite;
-      -webkit-animation-play-state: running, running;
-      animation-name: snowflakes-fall, snowflakes-shake;
-      animation-duration: 10s, 3s;
-      animation-timing-function: linear, ease-in-out;
-      animation-iteration-count: infinite, infinite;
-      animation-play-state: running, running;
-    }
-
-    .snowflake:nth-of-type(0) {
-      left: 1%;
-      -webkit-animation-delay: 0s, 0s;
-      animation-delay: 0s, 0s;
-    }
-
-    .snowflake:nth-of-type(1) {
-      left: 10%;
-      -webkit-animation-delay: 1s, 1s;
-      animation-delay: 1s, 1s;
-    }
-
-    .snowflake:nth-of-type(2) {
-      left: 20%;
-      -webkit-animation-delay: 6s, 0.5s;
-      animation-delay: 6s, 0.5s;
-    }
-
-    .snowflake:nth-of-type(3) {
-      left: 30%;
-      -webkit-animation-delay: 4s, 2s;
-      animation-delay: 4s, 2s;
-    }
-
-    .snowflake:nth-of-type(4) {
-      left: 40%;
-      -webkit-animation-delay: 2s, 2s;
-      animation-delay: 2s, 2s;
-    }
-
-    .snowflake:nth-of-type(5) {
-      left: 50%;
-      -webkit-animation-delay: 8s, 3s;
-      animation-delay: 8s, 3s;
-    }
-
-    .snowflake:nth-of-type(6) {
-      left: 60%;
-      -webkit-animation-delay: 6s, 2s;
-      animation-delay: 6s, 2s;
-    }
-
-    .snowflake:nth-of-type(7) {
-      left: 70%;
-      -webkit-animation-delay: 2.5s, 1s;
-      animation-delay: 2.5s, 1s;
-    }
-
-    .snowflake:nth-of-type(8) {
-      left: 80%;
-      -webkit-animation-delay: 1s, 0s;
-      animation-delay: 1s, 0s;
-    }
-
-    .snowflake:nth-of-type(9) {
-      left: 90%;
-      -webkit-animation-delay: 3s, 1.5s;
-      animation-delay: 3s, 1.5s;
-    }
-  </style>
-
-  <!-- Scripts -->
-  <script src="assets/js/jquery.min.js" defer></script>
-  <script src="assets/js/breakpoints.min.js" defer></script>
-  <script src="assets/js/util.js" defer></script>
-  <script src="assets/js/main.js" defer></script>
-  <script src="assets/js/lightbox.js" defer></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('#main article img').forEach(function(img) {
-        img.loading = 'lazy';
-      });
-    });
-  </script>
-  <script>
-    document.getElementById("contactForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const form = e.target;
-
-      // Build URL-encoded form data
-      const data = new URLSearchParams();
-      data.append("name", form.name.value);
-      data.append("email", form.email.value);
-      data.append("phone", form.phone.value);
-      data.append("message", form.message.value);
-
-      // Send POST request with URL-encoded data
-      fetch("https://script.google.com/macros/s/AKfycbydvRQ5BGX0H4dfkMo7SKOCZOpMvLS7GTyrXopFdOA6LF4CxqxP1DC3BXAWCgvDo7k/exec", {
-        method: "POST",
-        body: data
-      })
-      .then(response => {
-        if (response.ok) {
-          document.getElementById("responseMessage").textContent = "Thank you! Your message has been sent.";
-          form.reset();
-        } else {
-          throw new Error("Network response was not ok.");
+      @-webkit-keyframes snowflakes-fall {
+        0% {
+          top: -10%;
         }
-      })
-      .catch(error => {
-        document.getElementById("responseMessage").textContent = "ERROR: Your message could not be sent.";
+
+        100% {
+          top: 100%;
+        }
+      }
+
+      @-webkit-keyframes snowflakes-shake {
+        0% {
+          -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+        }
+
+        50% {
+          -webkit-transform: translateX(40px);
+          transform: translateX(40px);
+        }
+
+        100% {
+          -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+        }
+      }
+
+      @keyframes snowflakes-fall {
+        0% {
+          top: -10%;
+        }
+
+        100% {
+          top: 100%;
+        }
+      }
+
+      @keyframes snowflakes-shake {
+        0% {
+          transform: translateX(0px);
+        }
+
+        50% {
+          transform: translateX(40px);
+        }
+
+        100% {
+          transform: translateX(0px);
+        }
+      }
+
+      .snowflake {
+        position: fixed;
+        top: -10%;
+        z-index: 9999;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: default;
+        -webkit-animation-name: snowflakes-fall, snowflakes-shake;
+        -webkit-animation-duration: 10s, 3s;
+        -webkit-animation-timing-function: linear, ease-in-out;
+        -webkit-animation-iteration-count: infinite, infinite;
+        -webkit-animation-play-state: running, running;
+        animation-name: snowflakes-fall, snowflakes-shake;
+        animation-duration: 10s, 3s;
+        animation-timing-function: linear, ease-in-out;
+        animation-iteration-count: infinite, infinite;
+        animation-play-state: running, running;
+      }
+
+      .snowflake:nth-of-type(0) {
+        left: 1%;
+        -webkit-animation-delay: 0s, 0s;
+        animation-delay: 0s, 0s;
+      }
+
+      .snowflake:nth-of-type(1) {
+        left: 10%;
+        -webkit-animation-delay: 1s, 1s;
+        animation-delay: 1s, 1s;
+      }
+
+      .snowflake:nth-of-type(2) {
+        left: 20%;
+        -webkit-animation-delay: 6s, 0.5s;
+        animation-delay: 6s, 0.5s;
+      }
+
+      .snowflake:nth-of-type(3) {
+        left: 30%;
+        -webkit-animation-delay: 4s, 2s;
+        animation-delay: 4s, 2s;
+      }
+
+      .snowflake:nth-of-type(4) {
+        left: 40%;
+        -webkit-animation-delay: 2s, 2s;
+        animation-delay: 2s, 2s;
+      }
+
+      .snowflake:nth-of-type(5) {
+        left: 50%;
+        -webkit-animation-delay: 8s, 3s;
+        animation-delay: 8s, 3s;
+      }
+
+      .snowflake:nth-of-type(6) {
+        left: 60%;
+        -webkit-animation-delay: 6s, 2s;
+        animation-delay: 6s, 2s;
+      }
+
+      .snowflake:nth-of-type(7) {
+        left: 70%;
+        -webkit-animation-delay: 2.5s, 1s;
+        animation-delay: 2.5s, 1s;
+      }
+
+      .snowflake:nth-of-type(8) {
+        left: 80%;
+        -webkit-animation-delay: 1s, 0s;
+        animation-delay: 1s, 0s;
+      }
+
+      .snowflake:nth-of-type(9) {
+        left: 90%;
+        -webkit-animation-delay: 3s, 1.5s;
+        animation-delay: 3s, 1.5s;
+      }
+    </style>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js" defer></script>
+    <script src="assets/js/breakpoints.min.js" defer></script>
+    <script src="assets/js/util.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/lightbox.js" defer></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('#main article img').forEach(function (img) {
+          img.loading = 'lazy';
+        });
       });
-    });
-  </script>
-</body>
+    </script>
+    <script>
+      document.getElementById("contactForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const form = e.target;
+
+        // Build URL-encoded form data
+        const data = new URLSearchParams();
+        data.append("name", form.name.value);
+        data.append("email", form.email.value);
+        data.append("phone", form.phone.value);
+        data.append("message", form.message.value);
+
+        // Send POST request with URL-encoded data
+        fetch("https://script.google.com/macros/s/AKfycbydvRQ5BGX0H4dfkMo7SKOCZOpMvLS7GTyrXopFdOA6LF4CxqxP1DC3BXAWCgvDo7k/exec", {
+          method: "POST",
+          body: data
+        })
+          .then(response => {
+            if (response.ok) {
+              document.getElementById("responseMessage").textContent = "Thank you! Your message has been sent.";
+              form.reset();
+            } else {
+              throw new Error("Network response was not ok.");
+            }
+          })
+          .catch(error => {
+            document.getElementById("responseMessage").textContent = "ERROR: Your message could not be sent.";
+          });
+      });
+    </script>
+  </body>
 
 </html>
